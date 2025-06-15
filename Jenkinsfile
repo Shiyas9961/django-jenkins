@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage("Clone") {
             steps {
-                git url: "https://github.com/Shiyas9961/django-jenkins.git"
+                git url: "https://github.com/Shiyas9961/django-jenkins.git",
                 branch: "main"
             }
         }
