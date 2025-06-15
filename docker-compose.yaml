@@ -17,6 +17,7 @@ services:
   web:
     build: .
     container_name: travel_app
+    image: travel_app:latest
     volumes:
       - .:/app
     ports:
