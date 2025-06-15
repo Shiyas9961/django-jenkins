@@ -5,7 +5,9 @@ pipeline {
 
     stages {
         stage("Clone") {
-
+            steps {
+                sh "git clone https://github.com/Shiyas9961/django-jenkins.git"
+            }
         }
     }
     stages {
@@ -20,7 +22,7 @@ pipeline {
     }
     stages {
         stage("Deploy"){
-            
+
         }
     }
 }
