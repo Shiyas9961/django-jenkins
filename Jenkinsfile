@@ -6,8 +6,7 @@ pipeline {
     stages {
         stage("Clone") {
             steps {
-                git url: "https://github.com/Shiyas9961/django-jenkins.git",
-                branch: "main"
+                git branch: "main",  url: "https://github.com/Shiyas9961/django-jenkins.git"
             }
         }
         stage("Build"){
@@ -26,7 +25,7 @@ pipeline {
         }
         stage("Deploy"){
             steps {
-                sh "docker-compose up -d"
+                sh "docker compose up -d"
             }
         }
     }
