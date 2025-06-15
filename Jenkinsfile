@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label "dev"
-    }
+    agent any
 
     stages {
         stage("Clone") {
@@ -10,15 +8,11 @@ pipeline {
                 branch: "main"
             }
         }
-    }
-    stages {
         stage("Build"){
             steps {
                 sh "docker-compose build --no-cache"
             }
         }
-    }
-    stages {
         stage("Push"){
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-hub-cred', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
@@ -28,8 +22,6 @@ pipeline {
                 }
             }
         }
-    }
-    stages {
         stage("Deploy"){
             steps {
                 sh "docker-compose up -d"
