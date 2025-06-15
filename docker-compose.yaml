@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15
+    container_name: travel_pg
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: travel_log_db
+      POSTGRES_USER: travel_user
+      POSTGRES_PASSWORD: travel_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    container_name: travel_app
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - envs/local.sh
+
+volumes:
+  postgres_data:

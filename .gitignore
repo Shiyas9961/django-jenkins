@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.env
+env/
+venv/
+ENV/
+*.sqlite3
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+static/
+
+# Environment
+.env
+*.env
+
+# Docker
+*.pid
+*.seed
+*.bak
+*.tar
+*.tar.gz
+*.log
+docker-compose.override.yml
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# PyCharm
+.idea/
+
+#

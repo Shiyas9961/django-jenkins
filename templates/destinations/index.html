@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Travel Destinations</title></head>
+<body>
+  <h1>Explore Destinations</h1>
+  <ul>
+    {% for dest in destinations %}
+      <li><strong>{{ dest.name }}</strong>: {{ dest.description }}</li>
+      <img style="width: 100px; height: 100px;" src="{{ dest.image_url }}" alt="{{ dest.name }}">
+    {% endfor %}
+  </ul>
+</body>
+</html>
